@@ -1,0 +1,58 @@
+{
+  "@@locale": "pt",
+  
+  "appTitle": "Tincture Proto",
+
+  "instructions": "Instruções",
+
+  "instructionsColorMode": "Escolha o modo:",
+  "instructionsColorModePrismatic": "Prismático (cores aleatórias) ou",
+  "instructionsColorModeSpectral": "Espectral (cores parecidas);",
+  
+  "instructionsDifficulty": "Escolha a dificuldade:",
+  "instructionsDifficultyApprentice": "aprendiz (6 cores),",
+  "instructionsDifficultyAdept": "adepto (8 cores),",
+  "instructionsDifficultyAlchemist": "alquimista (12 cores)...",
+  
+  "instructionsStart": "E finalmente inicie um jogo e encontre entre as cores na tela a cor igual a cor principal! As coisas podem ficar... extremas, se você conseguir pontos suficientes.",
+
+  "colorMode": "Escolha o Modo",
+
+  "chooseDifficulty": "Escolha a Dificuldade",
+
+  "difficultyApprentice": "Aprendiz",
+
+  "difficultyAdept": "Adepto",
+
+  "difficultyAlchemist": "Alquimista",
+
+  "difficultyArtifex": "Artífice",
+
+  "colorModePrismatic": "Prismátco",
+
+  "colorModeSpectral": "Espectral",
+
+  "startGame": "Começar Partida",
+
+  "newGame": "Nova Partida",
+
+  "nextRound": "Próxima Roundada",
+
+  "resetGame": "Zerar Partida",
+
+  "points": "Pontos",
+
+  "round": "Rodada",
+
+  "roundSummaryTitle": "Resumo da Rodada:",
+
+  "endOfRound": "Fim da rodada {roundNumber}",
+
+  "currentScore": "Pontuação atual: {points} Pontos",
+
+  "pointsWon": "Pontos ganhos: {points}",
+
+  "pointsLost": "Pontos perdidos: {points}",
+
+  "timeTaken": "Você levou {time} pra acabar."
+}

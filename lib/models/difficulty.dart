@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:tincture_proto/l10n/app_localizations.dart';
+
 enum DifficultyLevel { apprentice, adept, alchemist, artifex }
 
 class Difficulty {
@@ -46,22 +49,17 @@ class Difficulty {
     }
   }
 
-  String getName(String locale) {
-    final names = {
-      'en': {
-        DifficultyLevel.apprentice: 'Apprentice',
-        DifficultyLevel.adept: 'Adept',
-        DifficultyLevel.alchemist: 'Alchemist',
-        DifficultyLevel.artifex: 'Artifex',
-      },
-      'pt': {
-        DifficultyLevel.apprentice: 'Aprendiz',
-        DifficultyLevel.adept: 'Adepto',
-        DifficultyLevel.alchemist: 'Alquimista',
-        DifficultyLevel.artifex: 'Artífice',
-      },
-    };
-
-    return names[locale]?[level] ?? names['en']![level]!;
+  String getName(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    switch (level) {
+      case DifficultyLevel.apprentice:
+        return l10n.difficultyApprentice;
+      case DifficultyLevel.adept:
+        return l10n.difficultyAdept;
+      case DifficultyLevel.alchemist:
+        return l10n.difficultyAlchemist;
+      case DifficultyLevel.artifex:
+        return l10n.difficultyArtifex;
+    }
   }
 }

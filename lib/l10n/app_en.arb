@@ -1,0 +1,152 @@
+{
+  "@@locale": "en",
+  "appTitle": "Tincture Proto",
+  "@appTitle": {
+    "description": "The application title"
+  },
+  "instructions": "Instructions",
+  "@instructions": {
+    "description": "Instructions header"
+  },
+
+  "instructionsColorMode": "Choose the color mode:",
+  "instructionsColorModePrismatic": "prismatic (aleatory colors) or",
+  "instructionsColorModeSpectral": "spectral (similar colors);",
+
+  "instructionsDifficulty": "Choose the difficulty:",
+  "instructionsDifficultyApprentice": "apprentice (6 tiles),",
+  "instructionsDifficultyAdept": "adept (8 tiles),",
+  "instructionsDifficultyAlchemist": "alchemist (12 tiles)...",
+
+  "instructionsStart": "And finally start a game and find, among the tiles on the board, the color that matches the main one! Things might get a bit... extreme, if you get enough points",
+  
+  "colorMode": "Color Mode",
+  "@colorMode": {
+    "description": "Color mode selection label"
+  },
+
+  "chooseDifficulty": "Choose Difficulty",
+  "@chooseDifficulty": {
+    "description": "Difficulty selection label"
+  },
+
+  "difficultyApprentice": "Apprentice",
+  "@difficultyApprentice": {
+    "description": "Apprentice difficulty level"
+  },
+
+  "difficultyAdept": "Adept",
+  "@difficultyAdept": {
+    "description": "Adept difficulty level"
+  },
+
+  "difficultyAlchemist": "Alchemist",
+  "@difficultyAlchemist": {
+    "description": "Alchemist difficulty level"
+  },
+
+  "difficultyArtifex": "Artifex",
+  "@difficultyArtifex": {
+    "description": "Artifex difficulty level"
+  },
+
+  "colorModePrismatic": "Prismatic",
+  "@colorModePrismatic": {
+    "description": "Prismatic color mode"
+  },
+
+  "colorModeSpectral": "Spectral",
+  "@colorModeSpectral": {
+    "description": "Spectral color mode"
+  },
+
+  "startGame": "Start Game",
+  "@startGame": {
+    "description": "Button to start the game"
+  },
+
+  "newGame": "New Game",
+  "@newGame": {
+    "description": "Button to start a new game"
+  },
+
+  "nextRound": "Next Round",
+  "@nextRound": {
+    "description": "Button to proceed to next round"
+  },
+
+  "resetGame": "Reset Game",
+  "@resetGame": {
+    "description": "Button to reset the game"
+  },
+
+  "points": "Points",
+  "@points": {
+    "description": "Points label"
+  },
+
+  "round": "Round",
+  "@round": {
+    "description": "Round label"
+  },
+
+  "roundSummaryTitle": "Round Summary:",
+  "@roundSummaryTitle": {
+    "description": "Round summary section title"
+  },
+
+  "endOfRound": "End of Round {roundNumber}",
+  "@endOfRound": {
+    "description": "End of round message",
+    "placeholders": {
+      "roundNumber": {
+        "type": "String",
+        "example": "01"
+      }
+    }
+  },
+
+  "currentScore": "Current Score: {points} Points",
+  "@currentScore": {
+    "description": "Current score display",
+    "placeholders": {
+      "points": {
+        "type": "int",
+        "example": "42"
+      }
+    }
+  },
+
+  "pointsWon": "Points Won: {points}",
+  "@pointsWon": {
+    "description": "Points won in round",
+    "placeholders": {
+      "points": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+
+  "pointsLost": "Points Lost: {points}",
+  "@pointsLost": {
+    "description": "Points lost in round",
+    "placeholders": {
+      "points": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  
+  "timeTaken": "You took {time} to finish it.",
+  "@timeTaken": {
+    "description": "Time taken to complete round",
+    "placeholders": {
+      "time": {
+        "type": "String",
+        "example": "42.50 s"
+      }
+    }
+  }
+}

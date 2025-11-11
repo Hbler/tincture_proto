@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tincture_proto/l10n/app_localizations.dart';
 import 'package:tincture_proto/models/difficulty.dart';
 import 'package:tincture_proto/models/round.dart';
 import 'package:tincture_proto/models/tile.dart';
@@ -7,7 +9,8 @@ import 'package:tincture_proto/services/color_gen.dart';
 class GameState extends ChangeNotifier {
   ColorMode _colorMode = ColorMode.spectral;
   DifficultyLevel _difficultyLevel = DifficultyLevel.apprentice;
-  String _locale = 'en';
+
+  Locale? _currentLocale;
 
   int _totalPoints = 0;
   int _currentRound = 1;
@@ -26,7 +29,7 @@ class GameState extends ChangeNotifier {
 
   ColorMode get colorMode => _colorMode;
   DifficultyLevel get difficultyLeve => _difficultyLevel;
-  String get locale => _locale;
+  Locale? get currentLocale => _currentLocale;
   int get totalPoints => _totalPoints;
   int get currentRound => _currentRound;
   bool get isGameActive => _isGameActive;
@@ -47,9 +50,27 @@ class GameState extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setLocale(String locale) {
-    _locale = locale;
+  void setLocale(Locale? locale) async {
+    _currentLocale = locale;
+
+    final prefs = await SharedPreferences.getInstance();
+    if (locale != null) {
+      await prefs.setString('locale', locale.languageCode);
+    } else {
+      await prefs.remove('locale');
+    }
+
     notifyListeners();
+  }
+
+  Future<void> loadSavedLocale() async {
+    final prefs = await SharedPreferences.getInstance();
+    final savedLocale = prefs.getString('locale');
+
+    if (savedLocale != null) {
+      _currentLocale = Locale(savedLocale);
+      notifyListeners();
+    }
   }
 
   void startGame() {
@@ -183,13 +204,13 @@ class GameState extends ChangeNotifier {
     _roundHistory[_currentRound] = round;
   }
 
-  String getFormattedPoints() {
-    final pointWord = _locale == 'pt' ? 'Pontos' : 'Points';
-    return '${_totalPoints.toString().padLeft(3, '0')} $pointWord';
+  String getFormattedPoints(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    return '${_totalPoints.toString().padLeft(3, '0')} ${l10n.points}';
   }
 
-  String getFormattedRound() {
-    final roundWord = _locale == 'pt' ? 'Rodada' : 'Round';
-    return '$roundWord ${_currentRound.toString().padLeft(2, '0')}';
+  String getFormattedRound(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    return '${l10n.round} ${_currentRound.toString().padLeft(2, '0')}';
   }
 }

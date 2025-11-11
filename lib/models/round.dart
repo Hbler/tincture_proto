@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:tincture_proto/l10n/app_localizations.dart';
+
 class Round {
   final int roundNumber;
   final int totalPoints;
@@ -23,28 +26,15 @@ class Round {
     }
   }
 
-  List<String> getSummary() {
+  List<String> getSummary(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return [
-      'End of Round ${roundNumber.toString().padLeft(2, '0')}',
-      'Current Score: $totalPoints Points',
-      'Points Won: $pointsWon',
-      'Points Lost: $pointsLost'
-          'You took ${getFormattedTime()} to finish it.',
+      l10n.endOfRound(roundNumber.toString().padLeft(2, '0')),
+      l10n.currentScore(totalPoints),
+      l10n.pointsWon(pointsWon),
+      l10n.pointsLost(pointsLost),
+      l10n.timeTaken(getFormattedTime()),
     ];
-  }
-
-  List<String> getResumo() {
-    return [
-      'Fim do round ${roundNumber.toString().padLeft(2, '0')}',
-      'Pontuação atual: $totalPoints Points',
-      'Pontos ganhos: $pointsWon',
-      'Pontos perdidos: $pointsLost'
-          'Você levou ${getFormattedTime()} pra acabar.',
-    ];
-  }
-
-  List<String> getLocalizedSummary(String locale) {
-    return locale == 'pt' ? getResumo() : getSummary();
   }
 
   @override
