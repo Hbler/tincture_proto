@@ -71,7 +71,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get newGame => 'Nova Partida';
 
   @override
-  String get nextRound => 'Próxima Roundada';
+  String get nextRound => 'Próxima Rondada';
 
   @override
   String get resetGame => 'Zerar Partida';

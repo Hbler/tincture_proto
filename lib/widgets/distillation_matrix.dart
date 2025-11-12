@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tincture_proto/models/game_state.dart';
+import 'package:tincture_proto/models/tile.dart';
 import 'package:tincture_proto/widgets/chroma_phial.dart';
 import 'package:tincture_proto/widgets/lead_color.dart';
 
@@ -70,32 +71,42 @@ class _TilesGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (gameState.tiles.isEmpty) {
-      return const Center(
-        child: Text(
-          '...',
-          style: TextStyle(fontSize: 48, color: Colors.black26),
-        ),
-      );
-    }
+    return Selector<GameState, List<GameTile>>(
+      selector: (_, gameState) => gameState.tiles,
+      builder: (context, tiles, _) {
+        if (tiles.isEmpty) {
+          return const Center(
+            child: Text(
+              '...',
+              style: TextStyle(fontSize: 48, color: Colors.black26),
+            ),
+          );
+        }
 
-    final crossAxisCount = _getCrossAxisCount(gameState.tiles.length);
+        final crossAxisCount = _getCrossAxisCount(tiles.length);
 
-    return Center(
-      child: GridView.builder(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: crossAxisCount,
-          mainAxisSpacing: 8,
-          crossAxisSpacing: 8,
-          childAspectRatio: 1.0,
-        ),
-        itemCount: gameState.tiles.length,
-        itemBuilder: (context, index) {
-          return ChromaPhial(tile: gameState.tiles[index]);
-        },
-      ),
+        return Center(
+          child: SingleChildScrollView(
+            child: GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: crossAxisCount,
+                mainAxisSpacing: 8,
+                crossAxisSpacing: 8,
+                childAspectRatio: 1.0,
+              ),
+              itemCount: tiles.length,
+              itemBuilder: (context, index) {
+                return ChromaPhial(
+                  key: ValueKey(tiles[index].id),
+                  tile: tiles[index],
+                );
+              },
+            ),
+          ),
+        );
+      },
     );
   }
 }

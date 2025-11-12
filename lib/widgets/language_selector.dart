@@ -66,7 +66,7 @@ class _LanguageOption extends StatelessWidget {
         child: Text(
           label,
           style: TextStyle(
-            fontFamily: 'OCR_A',
+            fontFamily: 'OCR',
             color: Colors.white,
             fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
           ),

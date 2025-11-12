@@ -31,7 +31,7 @@ class ChromaPhial extends StatelessWidget {
             child: Text(
               tile.icon,
               style: TextStyle(
-                fontSize: size * 0.8,
+                fontSize: size * 1.2,
                 color: tile.color,
                 height: 1.0,
               ),

@@ -45,7 +45,7 @@ class Difficulty {
       case DifficultyLevel.alchemist:
         return 105.0;
       case DifficultyLevel.artifex:
-        return 70.0;
+        return 45.0;
     }
   }
 

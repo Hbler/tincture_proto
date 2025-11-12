@@ -6,6 +6,7 @@ class GameTile {
   final String id;
   final Color color;
   final DifficultyLevel difficulty;
+  final String icon;
   bool isMatched;
 
   static const List<String> _icons = ['▀', '▄', '█', '◼', '▮', '▪'];
@@ -14,10 +15,11 @@ class GameTile {
     required this.id,
     required this.color,
     required this.difficulty,
+    String? icon,
     this.isMatched = false,
-  });
+  }) : icon = icon ?? _generateIcon(difficulty);
 
-  String get icon {
+  static String _generateIcon(DifficultyLevel difficulty) {
     final random = Random();
     int maxIndex;
 
@@ -43,12 +45,14 @@ class GameTile {
     String? id,
     Color? color,
     DifficultyLevel? difficulty,
+    String? icon,
     bool? isMatched,
   }) {
     return GameTile(
       id: id ?? this.id,
       color: color ?? this.color,
       difficulty: difficulty ?? this.difficulty,
+      icon: icon ?? this.icon,
       isMatched: isMatched ?? this.isMatched,
     );
   }

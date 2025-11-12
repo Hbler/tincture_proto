@@ -81,9 +81,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: OCR A
+    - family: OCR
       fonts:
-        - asset: assets/fonts/OCR_A/OCR_A-Regular.otf
+        - asset: assets/fonts/OCR/OCR-Regular.otf
     - family: Optima
       fonts:
         - asset: assets/fonts/Optima/Optima-Bold.otf

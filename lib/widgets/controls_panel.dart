@@ -57,8 +57,7 @@ class _InstructionsButton extends StatelessWidget {
             style: const TextStyle(
               color: Colors.white,
               fontSize: 18,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'OCR_A',
+              fontFamily: 'OCR',
             ),
           ),
         ],
@@ -81,8 +80,7 @@ class _ColorModeSelector extends StatelessWidget {
           style: TextStyle(
             color: Colors.white,
             fontSize: 16,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'OCR_A',
+            fontFamily: 'OCR',
           ),
         ),
         const SizedBox(height: 12),
@@ -117,8 +115,7 @@ class _DifficultySelector extends StatelessWidget {
           style: TextStyle(
             color: Colors.white,
             fontSize: 16,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'OCR_A',
+            fontFamily: 'OCR',
           ),
         ),
         const SizedBox(height: 12),
@@ -229,8 +226,7 @@ class _ScoreDisplay extends StatelessWidget {
             style: const TextStyle(
               color: Colors.white,
               fontSize: 20,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'OCR_A',
+              fontFamily: 'OCR',
             ),
             textAlign: TextAlign.center,
           ),
@@ -240,7 +236,7 @@ class _ScoreDisplay extends StatelessWidget {
             style: const TextStyle(
               color: Colors.white,
               fontSize: 16,
-              fontFamily: 'OCR_A',
+              fontFamily: 'OCR',
             ),
             textAlign: TextAlign.center,
           ),

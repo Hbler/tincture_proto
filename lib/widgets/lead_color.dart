@@ -9,23 +9,22 @@ class LeadColor extends StatelessWidget {
   Widget build(BuildContext context) {
     final gameState = context.watch<GameState>();
 
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final isMobile =
-            constraints.maxWidth < 860 || constraints.maxHeight < 200;
-        final icon = isMobile ? '-' : '*';
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isMobile = screenWidth < 860;
 
-        return Center(
-          child: Text(
-            icon,
-            style: TextStyle(
-              fontSize: isMobile ? 80 : 370,
-              color: gameState.mainColor,
-              height: 1.0,
-            ),
-          ),
-        );
-      },
+    final icon = isMobile ? '━' : '✦';
+    final fontSize = isMobile ? 100.0 : 280.0;
+
+    return Center(
+      child: Text(
+        icon,
+        style: TextStyle(
+          fontSize: fontSize,
+          color: gameState.mainColor,
+          height: 1.0,
+          fontWeight: FontWeight.w900,
+        ),
+      ),
     );
   }
 }

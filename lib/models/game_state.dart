@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tincture_proto/l10n/app_localizations.dart';
@@ -7,6 +8,7 @@ import 'package:tincture_proto/models/tile.dart';
 import 'package:tincture_proto/services/color_gen.dart';
 
 class GameState extends ChangeNotifier {
+  final Random _random = Random();
   ColorMode _colorMode = ColorMode.spectral;
   DifficultyLevel _difficultyLevel = DifficultyLevel.apprentice;
 
@@ -132,8 +134,9 @@ class GameState extends ChangeNotifier {
       return;
     }
 
-    final randomTile =
-        remainingTiles[DateTime.now().microsecond % remainingTiles.length];
+    final randomIndex = _random.nextInt(remainingTiles.length);
+    final randomTile = remainingTiles[randomIndex];
+
     _mainColor = randomTile.color;
     _bgColor = ColorGenerator.getLighter(_mainColor);
     _uiColor = ColorGenerator.getDarker(_mainColor);
@@ -162,9 +165,7 @@ class GameState extends ChangeNotifier {
   }
 
   bool _colorsMatch(Color color1, Color color2) {
-    return (color1.r - color2.r).abs() <= 1 &&
-        (color1.g - color2.g).abs() <= 1 &&
-        (color1.b - color2.b).abs() <= 1;
+    return color1.r == color2.r && color1.g == color2.g && color1.b == color2.b;
   }
 
   void _updatePoints(bool isCorrect) {
@@ -178,10 +179,9 @@ class GameState extends ChangeNotifier {
         _totalPoints -= difficulty.points;
         _pointsLostThisRound += difficulty.points;
       }
-
-      if (_totalPoints >= 100 && !_isArtifexUnlocked) {
-        _isArtifexUnlocked = true;
-      }
+    }
+    if (_totalPoints >= 100 && !_isArtifexUnlocked) {
+      _isArtifexUnlocked = true;
     }
   }
 

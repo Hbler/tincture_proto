@@ -56,14 +56,16 @@ class RoundSummaryOverlay extends StatelessWidget {
 
               const SizedBox(height: 32),
 
-              Row(
+              Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   ElevatedButton.icon(
                     onPressed: () => gameState.nextRound(),
                     label: Text(l10n.nextRound),
                     icon: const Icon(Icons.arrow_forward),
                   ),
+                  const SizedBox(height: 16),
                   OutlinedButton.icon(
                     onPressed: () => gameState.resetGame(),
                     label: Text(l10n.resetGame),
