@@ -28,7 +28,7 @@ class GameState extends ChangeNotifier {
   final Map<int, Round> _roundHistory = {};
 
   ColorMode get colorMode => _colorMode;
-  DifficultyLevel get difficultyLeve => _difficultyLevel;
+  DifficultyLevel get difficultyLevel => _difficultyLevel;
   Locale? get currentLocale => _currentLocale;
   int get totalPoints => _totalPoints;
   int get currentRound => _currentRound;

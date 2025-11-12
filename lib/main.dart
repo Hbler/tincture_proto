@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:tincture_proto/l10n/app_localizations.dart';
 import 'package:tincture_proto/models/game_state.dart';
+import 'package:tincture_proto/screens/home_scr.dart';
 
 void main() {
   runApp(const TinctureProtoApp());
@@ -21,6 +22,7 @@ class TinctureProtoApp extends StatelessWidget {
           return MaterialApp(
             title: 'Tincture Proto',
             debugShowCheckedModeBanner: false,
+
             localizationsDelegates: const [
               AppLocalizations.delegate,
               GlobalMaterialLocalizations.delegate,
@@ -29,6 +31,7 @@ class TinctureProtoApp extends StatelessWidget {
             ],
             supportedLocales: const [Locale('en'), Locale('pt')],
             locale: gameState.currentLocale,
+
             theme: ThemeData(
               useMaterial3: true,
               // bg from game state
@@ -68,7 +71,7 @@ class TinctureProtoApp extends StatelessWidget {
                 ),
               ),
             ),
-            // home: const HomeScreen, // not yet implemented;
+            home: const HomeScreen(), // not yet implemented;
           );
         },
       ),
