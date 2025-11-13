@@ -6,9 +6,9 @@ plugins {
 }
 
 android {
+    ndkVersion = "29.0.14206865"
     namespace = "com.example.tincture_proto"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

@@ -10,12 +10,12 @@ class GameTile {
   bool isMatched;
 
   static const List<String> _iconPaths = [
-    'icons/flask.svg',
-    'icons/vial.svg',
-    'icons/beaker.svg',
-    'icons/crucible.svg',
-    'icons/mortar.svg',
-    'icons/alembic.svg',
+    'assets/icons/flask.svg',
+    'assets/icons/vial.svg',
+    'assets/icons/beaker.svg',
+    'assets/icons/crucible.svg',
+    'assets/icons/mortar.svg',
+    'assets/icons/alembic.svg',
   ];
 
   GameTile({
