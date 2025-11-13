@@ -50,12 +50,12 @@
     "description": "Artifex difficulty level"
   },
 
-  "colorModePrismatic": "Prismatic",
+  "colorModePrismatic": "Prismatic (random)",
   "@colorModePrismatic": {
     "description": "Prismatic color mode"
   },
 
-  "colorModeSpectral": "Spectral",
+  "colorModeSpectral": "Spectral (mono)",
   "@colorModeSpectral": {
     "description": "Spectral color mode"
   },

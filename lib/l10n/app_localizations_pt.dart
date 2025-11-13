@@ -59,10 +59,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get difficultyArtifex => 'Artífice';
 
   @override
-  String get colorModePrismatic => 'Prismátco';
+  String get colorModePrismatic => 'Prismátco (random)';
 
   @override
-  String get colorModeSpectral => 'Espectral';
+  String get colorModeSpectral => 'Espectral (mono)';
 
   @override
   String get startGame => 'Começar Partida';

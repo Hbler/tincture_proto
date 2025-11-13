@@ -197,13 +197,13 @@ abstract class AppLocalizations {
   /// Prismatic color mode
   ///
   /// In en, this message translates to:
-  /// **'Prismatic'**
+  /// **'Prismatic (random)'**
   String get colorModePrismatic;
 
   /// Spectral color mode
   ///
   /// In en, this message translates to:
-  /// **'Spectral'**
+  /// **'Spectral (mono)'**
   String get colorModeSpectral;
 
   /// Button to start the game

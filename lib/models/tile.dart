@@ -6,20 +6,27 @@ class GameTile {
   final String id;
   final Color color;
   final DifficultyLevel difficulty;
-  final String icon;
+  final String iconPath;
   bool isMatched;
 
-  static const List<String> _icons = ['▀', '▄', '█', '◼', '▮', '▪'];
+  static const List<String> _iconPaths = [
+    'icons/flask.svg',
+    'icons/vial.svg',
+    'icons/beaker.svg',
+    'icons/crucible.svg',
+    'icons/mortar.svg',
+    'icons/alembic.svg',
+  ];
 
   GameTile({
     required this.id,
     required this.color,
     required this.difficulty,
-    String? icon,
+    String? iconPath,
     this.isMatched = false,
-  }) : icon = icon ?? _generateIcon(difficulty);
+  }) : iconPath = iconPath ?? _generateIconPath(difficulty);
 
-  static String _generateIcon(DifficultyLevel difficulty) {
+  static String _generateIconPath(DifficultyLevel difficulty) {
     final random = Random();
     int maxIndex;
 
@@ -38,21 +45,21 @@ class GameTile {
         break;
     }
 
-    return _icons[random.nextInt((maxIndex + 1))];
+    return _iconPaths[random.nextInt((maxIndex + 1))];
   }
 
   GameTile copyWith({
     String? id,
     Color? color,
     DifficultyLevel? difficulty,
-    String? icon,
+    String? iconPath,
     bool? isMatched,
   }) {
     return GameTile(
       id: id ?? this.id,
       color: color ?? this.color,
       difficulty: difficulty ?? this.difficulty,
-      icon: icon ?? this.icon,
+      iconPath: iconPath ?? this.iconPath,
       isMatched: isMatched ?? this.isMatched,
     );
   }

@@ -32,7 +32,7 @@ class InstructionsModal extends StatelessWidget {
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 24,
-                    fontWeight: FontWeight.bold,
+                    fontFamily: 'OCR',
                   ),
                 ),
                 IconButton(
@@ -95,8 +95,8 @@ class _InstructionSection extends StatelessWidget {
           title,
           style: const TextStyle(
             color: Colors.white,
-            fontWeight: FontWeight.bold,
             fontSize: 16,
+            fontFamily: 'OCR',
           ),
         ),
         const SizedBox(height: 8),

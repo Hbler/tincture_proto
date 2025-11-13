@@ -58,10 +58,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get difficultyArtifex => 'Artifex';
 
   @override
-  String get colorModePrismatic => 'Prismatic';
+  String get colorModePrismatic => 'Prismatic (random)';
 
   @override
-  String get colorModeSpectral => 'Spectral';
+  String get colorModeSpectral => 'Spectral (mono)';
 
   @override
   String get startGame => 'Start Game';

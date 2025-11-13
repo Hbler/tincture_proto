@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:tincture_proto/models/difficulty.dart';
 import 'package:tincture_proto/models/game_state.dart';
@@ -28,13 +29,11 @@ class ChromaPhial extends StatelessWidget {
             borderRadius: BorderRadius.circular(4),
           ),
           child: Center(
-            child: Text(
-              tile.icon,
-              style: TextStyle(
-                fontSize: size * 1.2,
-                color: tile.color,
-                height: 1.0,
-              ),
+            child: SvgPicture.asset(
+              tile.iconPath,
+              width: size * 0.7,
+              height: size * 0.7,
+              colorFilter: ColorFilter.mode(tile.color, BlendMode.srcIn),
             ),
           ),
         ),
