@@ -10,12 +10,12 @@ class GameTile {
   bool isMatched;
 
   static const List<String> _iconPaths = [
-    'assets/icons/flask.svg',
-    'assets/icons/vial.svg',
-    'assets/icons/beaker.svg',
-    'assets/icons/crucible.svg',
-    'assets/icons/mortar.svg',
-    'assets/icons/alembic.svg',
+    'assets/icons/bottle_a.svg',
+    'assets/icons/bottle_b.svg',
+    'assets/icons/conical_a.svg',
+    'assets/icons/conical_b.svg',
+    'assets/icons/rounded_a.svg',
+    'assets/icons/rounded_b.svg',
   ];
 
   GameTile({
@@ -24,26 +24,11 @@ class GameTile {
     required this.difficulty,
     String? iconPath,
     this.isMatched = false,
-  }) : iconPath = iconPath ?? _generateIconPath(difficulty);
+  }) : iconPath = iconPath ?? _getRandomIconPath();
 
-  static String _generateIconPath(DifficultyLevel difficulty) {
+  static String _getRandomIconPath() {
     final random = Random();
-    int maxIndex;
-
-    switch (difficulty) {
-      case DifficultyLevel.apprentice:
-        maxIndex = 5;
-        break;
-      case DifficultyLevel.adept:
-        maxIndex = 4;
-        break;
-      case DifficultyLevel.alchemist:
-        maxIndex = 3;
-        break;
-      case DifficultyLevel.artifex:
-        maxIndex = 2;
-        break;
-    }
+    final maxIndex = 5;
 
     return _iconPaths[random.nextInt((maxIndex + 1))];
   }
