@@ -154,16 +154,14 @@ lib/
 - Thematic rebranding and terminology
 - Custom typography integration
 - Sound effects (correct/wrong feedback)
-- Haptic feedback (mobile - in testing)
+- Haptic feedback
 
 ### 🚧 Known Issues
 - Some rendering bugs to be addressed
 - Minor UI/UX refinements needed
-- Haptic feedback still being tested
 
 ### 📋 Roadmap
 - [ ] Fix rendering issues
-- [ ] Complete haptic feedback testing
 - [ ] Implement persistent high scores
 - [ ] Add statistics/leaderboard screen
 - [ ] Add welcome/menu screen with navigation
