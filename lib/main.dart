@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:tincture_proto/l10n/app_localizations.dart';
 import 'package:tincture_proto/models/game_state.dart';
 import 'package:tincture_proto/screens/home_scr.dart';
+import 'package:tincture_proto/services/feedback.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
+  await FeedbackService().initialize();
+
   runApp(const TinctureProtoApp());
 }
 

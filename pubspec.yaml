@@ -42,6 +42,8 @@ dependencies:
   intl: ^0.20.2
   shared_preferences: ^2.5.3
   flutter_svg: ^2.2.2
+  audioplayers: ^6.5.1
+  vibration: ^3.1.4
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +75,11 @@ flutter:
     - assets/icons/conical_b.svg
     - assets/icons/rounded_a.svg
     - assets/icons/rounded_b.svg
+
+    - assets/sounds/correct.mp3
+    - assets/sounds/tap_a.mp3
+    - assets/sounds/tap_b.mp3
+    - assets/sounds/wrong.mp3
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
