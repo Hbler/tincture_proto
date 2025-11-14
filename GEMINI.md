@@ -31,6 +31,11 @@ To build and run this project, you need to have the Flutter SDK (3.8 or higher) 
     *   **Mobile:** `flutter run -d ios` (or `android`)
     *   **Web:** `flutter run -d chrome`
 
+5.  **Run Tests:**
+    ```bash
+    flutter test
+    ```
+
 ## Development Conventions
 
 *   **State Management:** The project uses the `provider` package for state management. The core game logic and state are managed in the `GameState` class, which is a `ChangeNotifier`.
@@ -42,4 +47,11 @@ To build and run this project, you need to have the Flutter SDK (3.8 or higher) 
     *   `lib/screens`: Contains the UI screens of the application (`home_scr.dart`).
     *   `lib/services`: Contains the business logic, such as the color generation algorithm (`color_gen.dart`).
     *   `lib/widgets`: Contains reusable UI components.
-*   **Testing:** The project has a `test` directory, but no specific testing conventions are documented in the provided files.
+*   **Testing:** The project uses a combination of unit and widget tests to ensure code quality.
+    *   **Tools:** The `flutter_test` package is used for writing tests, and `mockito` is used for creating mock objects for dependencies. The `build_runner` package is used to generate the mock files.
+    *   **Strategy:**
+        *   **Unit Tests:** Used for testing individual classes and functions in the `lib/models` and `lib/services` directories.
+        *   **Widget Tests:** Used for testing individual widgets in the `lib/widgets` and `lib/screens` directories.
+    *   **Location:** All test files are located in the `test` directory, mirroring the structure of the `lib` directory.
+    *   **Running Tests:** To run all tests, use the `flutter test` command. To run a specific test file, use `flutter test <path_to_test_file>`.
+    *   **Mocks:** To generate mock files after adding or changing mocks, run `flutter pub run build_runner build --delete-conflicting-outputs`.

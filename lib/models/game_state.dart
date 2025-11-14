@@ -9,6 +9,8 @@ import 'package:tincture_proto/services/color_gen.dart';
 
 class GameState extends ChangeNotifier {
   final Random _random = Random();
+  final SharedPreferences? _prefs;
+
   ColorMode _colorMode = ColorMode.spectral;
   DifficultyLevel _difficultyLevel = DifficultyLevel.apprentice;
 
@@ -28,6 +30,8 @@ class GameState extends ChangeNotifier {
   Color _uiColor = Colors.black;
 
   final Map<int, Round> _roundHistory = {};
+
+  GameState({SharedPreferences? prefs}) : _prefs = prefs;
 
   ColorMode get colorMode => _colorMode;
   DifficultyLevel get difficultyLevel => _difficultyLevel;
@@ -55,7 +59,7 @@ class GameState extends ChangeNotifier {
   void setLocale(Locale? locale) async {
     _currentLocale = locale;
 
-    final prefs = await SharedPreferences.getInstance();
+    final prefs = _prefs ?? await SharedPreferences.getInstance();
     if (locale != null) {
       await prefs.setString('locale', locale.languageCode);
     } else {
@@ -66,7 +70,7 @@ class GameState extends ChangeNotifier {
   }
 
   Future<void> loadSavedLocale() async {
-    final prefs = await SharedPreferences.getInstance();
+    final prefs = _prefs ?? await SharedPreferences.getInstance();
     final savedLocale = prefs.getString('locale');
 
     if (savedLocale != null) {
