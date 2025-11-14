@@ -2,13 +2,39 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:tincture_proto/models/difficulty.dart';
 
+/// Color generation modes for tile generation.
+///
+/// * [prismatic] - Completely different colors across entire spectrum
+/// * [spectral] - Similar hues within a single color family
 enum ColorMode { prismatic, spectral }
 
+/// Generates colors for game tiles using HSL color space.
+///
+/// Supports two generation modes:
+/// * **Prismatic**: Random colors across full hue spectrum (0-360°)
+/// * **Spectral**: Colors within a single hue family (red, yellow, green, etc.)
+///
+/// All colors have controlled saturation (20-100%) and lightness (40-60%)
+/// to ensure visibility and sufficient difficulty for matching.
+///
+/// Example:
+/// ```dart
+/// final generator = ColorGenerator(
+///   mode: ColorMode.spectral,
+///   difficulty: Difficulty.apprentice(),
+/// );
+/// final colors = generator.generateColors(); // Returns 6 colors
+/// ```
 class ColorGenerator {
+  /// The color generation mode (prismatic or spectral).
   final ColorMode mode;
+
+  /// The difficulty level determining number of colors to generate.
   final Difficulty difficulty;
+
   final Random _random = Random();
 
+  /// Hue ranges (in degrees) for spectral color families.
   static const Map<String, List<int>> _hueRanges = {
     'red': [10, 50],
     'yellow': [70, 110],
@@ -20,6 +46,9 @@ class ColorGenerator {
 
   ColorGenerator({required this.mode, required this.difficulty});
 
+  /// Generates a list of colors based on the current mode and difficulty.
+  ///
+  /// Returns a list with length equal to [difficulty.elements].
   List<Color> generateColors() {
     final amount = difficulty.elements;
 
@@ -66,11 +95,17 @@ class ColorGenerator {
     return colors;
   }
 
+  /// Creates a lighter variant of the given color.
+  ///
+  /// Sets lightness to 90% in HSL color space, useful for backgrounds.
   static Color getLighter(Color color) {
     final hsl = HSLColor.fromColor(color);
     return hsl.withLightness(0.9).toColor();
   }
 
+  /// Creates a darker variant of the given color.
+  ///
+  /// Sets lightness to 25% in HSL color space, useful for UI accents.
   static Color getDarker(Color color) {
     final hsl = HSLColor.fromColor(color);
     return hsl.withLightness(0.25).toColor();

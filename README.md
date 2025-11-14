@@ -153,17 +153,17 @@ lib/
 - Language switching
 - Thematic rebranding and terminology
 - Custom typography integration
+- Sound effects (correct/wrong feedback)
+- Haptic feedback (mobile - in testing)
 
 ### 🚧 Known Issues
 - Some rendering bugs to be addressed
 - Minor UI/UX refinements needed
-- Extreme mode unlock condition placement (currently triggers on wrong answer)
+- Haptic feedback still being tested
 
 ### 📋 Roadmap
 - [ ] Fix rendering issues
-- [ ] Fix Artifex unlock logic
-- [ ] Add sound effects
-- [ ] Add haptic feedback (mobile)
+- [ ] Complete haptic feedback testing
 - [ ] Implement persistent high scores
 - [ ] Add statistics/leaderboard screen
 - [ ] Add welcome/menu screen with navigation
