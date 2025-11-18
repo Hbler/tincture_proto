@@ -72,12 +72,70 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/icons/bottle_a.svg
-    - assets/icons/bottle_b.svg
-    - assets/icons/conical_a.svg
-    - assets/icons/conical_b.svg
-    - assets/icons/rounded_a.svg
-    - assets/icons/rounded_b.svg
+    - assets/icons/CR_22_BL.svg
+    - assets/icons/CR_22_BR.svg
+    - assets/icons/CR_22_C.svg
+    - assets/icons/CR_22_TL.svg
+    - assets/icons/CR_22_TR.svg
+    - assets/icons/CR_23_B.svg
+    - assets/icons/CR_23_HC.svg
+    - assets/icons/CR_23_L.svg
+    - assets/icons/CR_23_R.svg
+    - assets/icons/CR_23_T.svg
+    - assets/icons/CR_23_VC.svg
+    - assets/icons/CR_F.svg
+
+    - assets/icons/DC_22_BL.svg
+    - assets/icons/DC_22_BR.svg
+    - assets/icons/DC_22_C.svg
+    - assets/icons/DC_22_TL.svg
+    - assets/icons/DC_22_TR.svg
+    - assets/icons/DC_23_B.svg
+    - assets/icons/DC_23_HC.svg
+    - assets/icons/DC_23_L.svg
+    - assets/icons/DC_23_R.svg
+    - assets/icons/DC_23_T.svg
+    - assets/icons/DC_23_VC.svg
+    - assets/icons/DC_F.svg
+
+    - assets/icons/HX_22_BL.svg
+    - assets/icons/HX_22_BR.svg
+    - assets/icons/HX_22_C.svg
+    - assets/icons/HX_22_TL.svg
+    - assets/icons/HX_22_TR.svg
+    - assets/icons/HX_23_B.svg
+    - assets/icons/HX_23_HC.svg
+    - assets/icons/HX_23_L.svg
+    - assets/icons/HX_23_R.svg
+    - assets/icons/HX_23_T.svg
+    - assets/icons/HX_23_VC.svg
+    - assets/icons/HX_F.svg
+
+    - assets/icons/OC_22_BL.svg
+    - assets/icons/OC_22_BR.svg
+    - assets/icons/OC_22_C.svg
+    - assets/icons/OC_22_TL.svg
+    - assets/icons/OC_22_TR.svg
+    - assets/icons/OC_23_B.svg
+    - assets/icons/OC_23_HC.svg
+    - assets/icons/OC_23_L.svg
+    - assets/icons/OC_23_R.svg
+    - assets/icons/OC_23_T.svg
+    - assets/icons/OC_23_VC.svg
+    - assets/icons/OC_F.svg
+
+    - assets/icons/SQ_22_BL.svg
+    - assets/icons/SQ_22_BR.svg
+    - assets/icons/SQ_22_C.svg
+    - assets/icons/SQ_22_TL.svg
+    - assets/icons/SQ_22_TR.svg
+    - assets/icons/SQ_23_B.svg
+    - assets/icons/SQ_23_HC.svg
+    - assets/icons/SQ_23_L.svg
+    - assets/icons/SQ_23_R.svg
+    - assets/icons/SQ_23_T.svg
+    - assets/icons/SQ_23_VC.svg
+    - assets/icons/SQ_F.svg
 
     - assets/sounds/correct.mp3
     - assets/sounds/tap_a.mp3

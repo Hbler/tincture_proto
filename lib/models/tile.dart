@@ -1,50 +1,51 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:tincture_proto/models/color_sigil.dart';
 import 'package:tincture_proto/models/difficulty.dart';
 
 class GameTile {
   final String id;
   final Color color;
   final DifficultyLevel difficulty;
-  final String iconPath;
+  final ColorSigil sigil;
   bool isMatched;
-
-  static const List<String> _iconPaths = [
-    'assets/icons/bottle_a.svg',
-    'assets/icons/bottle_b.svg',
-    'assets/icons/conical_a.svg',
-    'assets/icons/conical_b.svg',
-    'assets/icons/rounded_a.svg',
-    'assets/icons/rounded_b.svg',
-  ];
 
   GameTile({
     required this.id,
     required this.color,
     required this.difficulty,
-    String? iconPath,
+    ColorSigil? sigil,
     this.isMatched = false,
-  }) : iconPath = iconPath ?? _getRandomIconPath();
+  }) : sigil = sigil ?? _generateSigil(difficulty);
 
-  static String _getRandomIconPath() {
-    final random = Random();
-    final maxIndex = 5;
+  String get iconPath => sigil.assetPath;
 
-    return _iconPaths[random.nextInt((maxIndex + 1))];
+  static ColorSigil _generateSigil(DifficultyLevel difficulty) {
+    final factory = SigilFactory();
+
+    switch (difficulty) {
+      case DifficultyLevel.apprentice:
+        return factory.createForDifficulty('apprentice');
+      case DifficultyLevel.adept:
+        return factory.createForDifficulty('adept');
+      case DifficultyLevel.alchemist:
+        return factory.createForDifficulty('alchemist');
+      case DifficultyLevel.artifex:
+        return factory.createForDifficulty('artifex');
+    }
   }
 
   GameTile copyWith({
     String? id,
     Color? color,
     DifficultyLevel? difficulty,
-    String? iconPath,
+    ColorSigil? sigil,
     bool? isMatched,
   }) {
     return GameTile(
       id: id ?? this.id,
       color: color ?? this.color,
       difficulty: difficulty ?? this.difficulty,
-      iconPath: iconPath ?? this.iconPath,
+      sigil: sigil ?? this.sigil,
       isMatched: isMatched ?? this.isMatched,
     );
   }
