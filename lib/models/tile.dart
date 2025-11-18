@@ -10,12 +10,11 @@ class GameTile {
   bool isMatched;
 
   static const List<String> _iconPaths = [
-    'assets/icons/bottle_a.svg',
-    'assets/icons/bottle_b.svg',
-    'assets/icons/conical_a.svg',
-    'assets/icons/conical_b.svg',
-    'assets/icons/rounded_a.svg',
-    'assets/icons/rounded_b.svg',
+    'assets/icons/CR_F.svg',
+    'assets/icons/DC_F.svg',
+    'assets/icons/HX_F.svg',
+    'assets/icons/OC_F.svg',
+    'assets/icons/SQ_F.svg',
   ];
 
   GameTile({
@@ -28,7 +27,7 @@ class GameTile {
 
   static String _getRandomIconPath() {
     final random = Random();
-    final maxIndex = 5;
+    final maxIndex = 4;
 
     return _iconPaths[random.nextInt((maxIndex + 1))];
   }

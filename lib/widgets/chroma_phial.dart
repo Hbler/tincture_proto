@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
@@ -80,6 +81,29 @@ class _ChromaPhialState extends State<ChromaPhial>
   Widget build(BuildContext context) {
     final difficulty = Difficulty.fromLevel(widget.tile.difficulty);
     final size = difficulty.tileSize;
+    List<double> _possibleScales;
+
+    switch (difficulty.level) {
+      case DifficultyLevel.apprentice:
+        _possibleScales = [0.6, 0.7, 0.8, 0.9];
+        break;
+      case DifficultyLevel.adept:
+        _possibleScales = [0.7, 0.8, 0.9];
+        break;
+      case DifficultyLevel.alchemist:
+        _possibleScales = [0.8, 0.9];
+        break;
+      case DifficultyLevel.artifex:
+        _possibleScales = [0.9];
+        break;
+    }
+
+    double getRandomScale() {
+      final random = Random();
+      return _possibleScales[random.nextInt(_possibleScales.length)];
+    }
+
+    final scale = getRandomScale();
 
     if (widget.tile.isMatched) {
       return SizedBox(width: size, height: size);
@@ -114,8 +138,8 @@ class _ChromaPhialState extends State<ChromaPhial>
             child: Center(
               child: SvgPicture.asset(
                 widget.tile.iconPath,
-                width: size * 0.7,
-                height: size * 0.7,
+                width: size * scale,
+                height: size * scale,
                 colorFilter: ColorFilter.mode(
                   widget.tile.color,
                   BlendMode.srcIn,
