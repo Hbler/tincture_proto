@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 374.53 374.53">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: none;
-      }
-    </style>
-  </defs>
+  
   <g id="icons">
     <g>
       <path d="M93.39,374.53h62.91c19.27,0,36.4-12.27,42.6-30.51l48.38-142.27c3.19-9.39,3.19-19.58,0-28.98L198.9,30.51C192.7,12.27,175.57,0,156.3,0h-62.91c-19.27,0-36.4,12.27-42.6,30.51L2.4,172.78c-3.19,9.39-3.19,19.58,0,28.98l48.38,142.27c6.2,18.24,23.33,30.51,42.6,30.51Z"/>
-      <rect class="cls-1" x="0" y="0" width="374.53" height="374.53" transform="translate(374.53 374.53) rotate(-180)"/>
+      <rect fill="none" opacity="0" x="0" y="0" width="374.53" height="374.53" transform="translate(374.53 374.53) rotate(-180)"/>
     </g>
   </g>
 </svg>

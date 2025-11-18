@@ -114,8 +114,8 @@ class _ChromaPhialState extends State<ChromaPhial>
             child: Center(
               child: SvgPicture.asset(
                 widget.tile.iconPath,
-                width: size * 0.7,
-                height: size * 0.7,
+                width: size * 0.9,
+                height: size * 0.9,
                 colorFilter: ColorFilter.mode(
                   widget.tile.color,
                   BlendMode.srcIn,

@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:flutter/widgets.dart';
+
 enum SigilShape {
   square('SQ'),
   hexagon('HX'),
@@ -94,11 +96,15 @@ class SigilFactory {
       position = _randomPosition2x3().code;
     }
 
-    return ColorSigil(
+    final sigil = ColorSigil(
       shape: selectedShape,
       grid: selectedGrid,
       position: position,
     );
+
+    debugPrint('Generated sigil: $sigil');
+
+    return sigil;
   }
 
   ColorSigil createRandomWithShapeLimit(int maxShapeIndex) {
@@ -170,7 +176,7 @@ extension DifficultyGridLimit on SigilFactory {
         final selectedGrid = allowedGrids[_random.nextInt(allowedGrids.length)];
         return createRandom(grid: selectedGrid);
       case 'artifex':
-        return createRandom();
+        return createRandom(grid: SigilGrid.full);
       default:
         throw ArgumentError('Unknown difficutly: $difficulty');
     }
